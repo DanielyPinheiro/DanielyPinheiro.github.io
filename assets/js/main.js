@@ -159,6 +159,17 @@ function initSmoothScroll() {
   });
 }
 
+/* ---------- SKILL TOOLS TAP (mobile) ---------------------- */
+function initSkillToolsTap() {
+  if (window.matchMedia('(hover: none)').matches) {
+    document.querySelectorAll('.skill-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('expanded');
+      });
+    });
+  }
+}
+
 /* ---------- BACK TO TOP ----------------------------------- */
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
@@ -207,6 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initSkillBars();
   initProjectFilter();
+  initSkillToolsTap();
   initSmoothScroll();
 
   // Theme toggle button

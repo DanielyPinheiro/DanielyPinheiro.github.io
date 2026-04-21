@@ -490,6 +490,62 @@ section {
   white-space: nowrap;
 }
 
+/* ---------- FORMAÇÃO ------------------------------------- */
+#formacao { background: var(--bg-card); }
+
+.formacao-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.formacao-col-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.formacao-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.formacao-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.formacao-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.formacao-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.formacao-nota {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 48px;
+  font-style: italic;
+}
+
 /* ---------- HABILIDADES ---------------------------------- */
 #habilidades {}
 
@@ -547,6 +603,34 @@ section {
   color: var(--text-muted);
   margin-top: 5px;
   line-height: 1.5;
+}
+
+.skill-tools {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 1px solid transparent;
+  transition: max-height 0.3s ease, opacity 0.3s ease,
+              margin-top 0.3s ease, padding-top 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.skill-item:hover .skill-tools,
+.skill-item.expanded .skill-tools {
+  max-height: 32px;
+  opacity: 1;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top-color: var(--border);
+}
+
+.skill-tools span {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .soft-skills-badges {
@@ -1300,7 +1384,8 @@ footer a:hover { color: var(--accent-warm); opacity: 0.8; }
   .timeline-item:nth-child(odd)  .timeline-date { grid-column: 1; text-align: left; padding-left: 0; }
   .timeline-dot { display: none; }
 
-  .skills-grid  { grid-template-columns: 1fr; }
+  .skills-grid    { grid-template-columns: 1fr; }
+  .formacao-grid  { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
 
   .nav-links { display: none; }
